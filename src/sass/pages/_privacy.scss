@@ -1,0 +1,81 @@
+@use "../global"as *;
+
+.privacyBase,
+.privacyAccess {
+  @include mb120;
+
+  .container {
+    @include sectionWidth;
+
+    .desc {
+      width: min(100% - 80px, 720px);
+      margin: 0 auto 80px;
+      line-height: 1.8;
+      letter-spacing: 1px;
+
+      @include tab {
+        width: min(100% - 40px, 720px);
+        margin-bottom: 60px;
+        font-size: 1.4rem;
+
+        @include sp {
+          width: min(100%, 720px);
+        }
+      }
+    }
+
+    .wrap {
+      .inner {
+        @include contentWidth720;
+        @include mb80;
+
+        &Text {
+          @include commonText;
+          margin-bottom: 40px;
+        }
+
+        h4 {
+          width: fit-content;
+          margin-bottom: 20px;
+          border-bottom: 2px solid $orange;
+          font-size: 2rem;
+          font-weight: 500;
+
+          @include tab {
+            font-size: 1.6rem;
+          }
+        }
+        &List {
+          &Item {
+            margin-bottom: 10px;
+            line-height: 1.8;
+            @include tab {
+              font-size: 1.4rem;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &:before {
+              content: "・";
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    // アクセス解析
+    .textBox {
+      @include contentWidth720;
+
+      p {
+        @include commonText;
+        margin-bottom: 20px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

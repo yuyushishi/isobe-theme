@@ -1,0 +1,67 @@
+@use "../global"as *;
+
+.pageBase {
+  @include mb120;
+  .container {
+    width: min(100% - 80px, 900px);
+    margin: 0 auto;
+
+    @include sp {
+      width: min(100% - 40px, 900px);
+    }
+
+    h2 {
+      @include sectionLowTitle;
+    }
+
+    h3 {
+      @include contentLowTitle;
+    }
+
+    h4 {
+      @include sectionTopTitle;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 20px;
+
+      @include tab {
+        font-size: 1.4rem;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      text-align: center;
+      display: inline-block;
+      padding: 15px 50px;
+      border-radius: 100px;
+      background: $skyBlue;
+      position: relative;
+
+      @include tab {
+        padding: 15px 40px;
+      }
+
+      svg {
+        width: 14px;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translate(0, -50%);
+
+        @include tab {
+          right: 15px;
+        }
+      }
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}

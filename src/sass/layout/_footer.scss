@@ -1,0 +1,182 @@
+@use "../global"as *;
+
+.commonAccess {
+  background: linear-gradient(180deg, #fff 0%, #fff 60px, $lightBlue 60px, $lightBlue 100%);
+
+  .bg {
+    width: min(100% - 80px, $pc-s);
+    margin: -60px auto 0;
+    background: #fff;
+    padding: 60px 0 80px;
+    box-shadow: 4px 3px 10px rgba(0, 0, 0, .05);
+    position: relative;
+    z-index: 1;
+
+    @include tab {
+      padding: 40px 0 60px;
+      margin: 0 auto;
+
+      @include sp {
+        width: min(100% - 40px, $pc-s);
+      }
+    }
+
+    .container {
+      width: min(100% - 40px, 740px);
+      margin: 0 auto;
+
+      .wrap {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include tab {
+          display: block;
+        }
+
+        .logo {
+          width: 60px;
+
+          @include tab {
+            margin: 0 auto 20px;
+          }
+        }
+
+        .sns {
+          display: flex;
+          gap: 15px;
+          justify-content: center;
+
+          &Item {
+            a {
+              width: 40px;
+              height: 40px;
+              background: $lightBlue;
+              border-radius: 50%;
+              display: grid;
+              place-content: center;
+
+              svg {
+                width: 20px;
+                fill: $blue;
+              }
+            }
+          }
+        }
+      }
+
+      .list {
+        margin: 0 auto 40px;
+
+        .inner {
+          margin-bottom: 25px;
+          display: flex;
+          gap: 20px;
+
+          @include tab {
+            display: block;
+            font-size: 1.4rem;
+          }
+
+          dt {
+            width: 150px;
+
+            @include tab {
+              width: auto;
+              margin-bottom: 2px;
+            }
+
+            &:last-child {
+              @include tab {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          dd {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            line-height: 1.6;
+
+            @include tab {
+              display: block;
+            }
+
+            a {
+              width: fit-content;
+              display: flex;
+              align-items: center;
+              border-bottom: 1px solid $blue;
+
+              svg {
+                fill: $blue;
+                width: 16px;
+              }
+            }
+          }
+        }
+      }
+      .pic {
+        margin-bottom: 30px;
+      }
+    }
+  }
+}
+
+
+
+
+.footer {
+  @include sp {
+    margin-bottom: 67px;
+  }
+
+  .container {
+    background: $lightBlue;
+    padding: 60px 0;
+
+    @include sp {
+      display: none;
+    }
+
+    .pic {
+      margin-bottom: 30px;
+    }
+
+    .footerNav {
+      width: min(100% - 40px, 860px);
+      margin: 0 auto;
+
+      .list {
+        text-align: center;
+
+        &Item {
+          display: inline-block;
+          margin-right: 60px;
+
+          @include pc-s {
+            margin-right: 30px;
+            font-size: 1.4rem;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+
+      }
+    }
+  }
+
+  .copy {
+    background: $lightBlack;
+    padding: 20px 0;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+  }
+
+}

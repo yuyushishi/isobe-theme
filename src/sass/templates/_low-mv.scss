@@ -1,0 +1,90 @@
+@use "../global"as *;
+
+
+.commonLowMv {
+  position: relative;
+  margin: 50px 0 150px;
+
+  @include tab {
+    margin: 40px 0 100px;
+  }
+
+  .en {
+    width: 1920px;
+    font-size: 14rem;
+    color: #fff;
+    font-family: $f-roboto;
+    position: absolute;
+    left: 20px;
+    letter-spacing: 0;
+    top: 0;
+    font-weight: 300;
+
+    @include tab {
+      font-size: 6rem;
+      mix-blend-mode: difference;
+      z-index: 10;
+      transform: translateY(-50%);
+      @include sp {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  .container {
+    @include sectionWidth;
+    display: flex;
+    align-items: center;
+
+    @include tab {
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      width: 40%;
+      position: relative;
+      z-index: 1;
+
+      @include tab {
+        width: 100%;
+        order: 2;
+        text-align: right;
+      }
+
+      .jp {
+        font-size: 4rem;
+        font-family: $f-serif;
+        font-weight: 400;
+        @include tab {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .mv {
+      width: 60%;
+      position: relative;
+      z-index: 1;
+
+      @include tab {
+        width: 100%;
+        order: 1;
+        margin-bottom: 20px;
+      }
+
+      span {
+        display: block;
+        height: 100%;
+        margin-right: calc((60vw - 100%) * -1);
+
+        @include tab {
+          margin-right: 0;
+        }
+
+        img {
+          aspect-ratio: 2/1;
+        }
+      }
+    }
+  }
+}

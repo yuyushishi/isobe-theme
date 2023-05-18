@@ -1,0 +1,32 @@
+// 部品
+@use "../global" as *;
+
+
+// コンテンツ幅
+.c-contentWidth {
+  @include contentWidth720;
+}
+
+// セクションタイトルtop
+.c-sectionTopTitle {
+@include sectionTopTitle;
+}
+
+// セクションタイトルlow
+.c-sectionLowTitle {
+@include sectionLowTitle;
+}
+
+// コンテンツタイトルlow
+.c-contentLowTitle {
+@include contentLowTitle;
+}
+
+// ボタン
+.c-buttonSkyBlue {
+  @include buttonSkyBlue;
+}
+.c-buttonBorder {
+  @include buttonBorder;
+}
+

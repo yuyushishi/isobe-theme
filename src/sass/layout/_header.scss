@@ -1,0 +1,304 @@
+@use "../global"as *;
+
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+
+  &:after {
+    content: "";
+    display: block;
+    background: $lightBlue;
+    width: clamp(700px, 30vw, 1000px);
+    height: clamp(500px, 30vw, 800px);
+    position: absolute;
+    left: 5px;
+    top: 0;
+    z-index: -1;
+  }
+
+  .logo {
+    width: 60px;
+    margin-left: 40px;
+
+    @include tab {
+      margin-left: 20px;
+    }
+  }
+
+  &Right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    @include pc-s {
+      display: block;
+      width: 100%;
+      padding: 60px 0;
+      margin: 0 auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: $lightPurple;
+      z-index: 11;
+      opacity: 0;
+      visibility: hidden;
+      overflow-y: scroll;
+    }
+
+    .headerNav {
+      .list {
+        @include pc-s {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 30px 20px;
+          width: min(100% - 40px , 560px);
+          margin: 0 auto 40px;
+          @include sp {
+            display: block;
+          }
+        }
+        &Item {
+          display: inline-block;
+          margin-right: 50px;
+          font-weight: 500;
+
+          @include pc-m {
+            margin-right: 30px;
+            font-size: 1.4rem;
+
+            @include pc-s {
+              font-size: 1.6rem;
+              margin-right: 0;
+              width: calc((100% - (20px * 1)) / 2);
+              @include sp {
+                width: 100%;
+                margin-bottom: 20px;
+              }
+            }
+          }
+          &:last-child {
+            @include sp {
+              margin-bottom: 0;
+            }
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .cta {
+      padding: 20px 60px;
+      background: $lightBlue;
+      display: flex;
+      gap: 10px;
+
+      @include pc-m {
+        padding: 20px;
+        @include pc-s {
+          display: block;
+          text-align: center;
+        }
+      }
+
+      .textImg {
+        width: 100px;
+        object-fit: contain;
+        @include pc-s {
+          margin-bottom: 20px;
+        }
+      }
+
+      .box {
+        .tel {
+          margin-bottom: 5px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          justify-content: center;
+
+          @include pc-m {
+            margin-bottom: 0;
+            @include pc-s {
+              margin-bottom: 20px;
+            }
+          }
+
+          svg {
+            width: 16px;
+            fill: #150F04;
+          }
+
+          .num {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 0;
+
+            @include pc-m {
+              font-size: 2.4rem;
+
+              @include pc-s {
+                font-size: 2.4rem;
+                letter-spacing: 1px;
+              }
+            }
+          }
+        }
+
+        .inner {
+          p {
+            font-size: 1.4rem;
+            letter-spacing: 0;
+            margin-bottom: 5px;
+
+            @include pc-m {
+              margin-bottom: 0;
+              @include pc-s {
+                letter-spacing: 1px;
+                margin-bottom: 10px;
+                font-size: 1.6rem;
+              }
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// menu
+.headerMenu {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  z-index: 100;
+  @include pc-s {
+    display: block;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .menuTop,
+  .menuCenter,
+  .menuBottom {
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-radius: 20px;
+    background: #000;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .menuTop {
+    top: 35%;
+  }
+
+  .menuCenter {
+    top: 50%;
+  }
+
+  .menuBottom {
+    top: 65%;
+  }
+}
+
+
+
+
+
+.fixedMenu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 11111;
+
+  @include sp {
+    width: 100%;
+  }
+
+  .list {
+    display: flex;
+    gap: 1px;
+
+    &Item {
+      width: 100px;
+      height: 100px;
+      display: grid;
+      place-content: center;
+      text-align: center;
+
+      @include pc-s {
+        width: 90px;
+        height: 90px;
+
+        @include sp {
+          width: 25%;
+          padding: 15px 0;
+          height: auto;
+        }
+      }
+
+      img {
+        width: 20px;
+        margin: 0 auto 5px;
+
+        @include pc-s {
+          width: 16px;
+          margin: 0 auto 2px;
+        }
+      }
+
+      .jp {
+        display: block;
+        font-size: 1.4rem;
+
+        @include pc-s {
+          font-size: 1.2rem;
+        }
+      }
+
+      &01 {
+        background: $lightPurple;
+      }
+
+      &02 {
+        background: $skyBlue;
+      }
+
+      &03 {
+        background: $emerald;
+
+        .jp {
+          color: #fff;
+        }
+        i {
+          color: #fff;
+        }
+      }
+
+      &04 {
+        background: $orange;
+
+        .jp {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

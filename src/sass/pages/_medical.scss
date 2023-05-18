@@ -1,0 +1,228 @@
+@use "../global"as *;
+
+.medicalFirst,
+.medicalGuidance {
+  @include mb120;
+
+  .container {
+    @include sectionWidth;
+
+    .wrap {
+      .inner {
+        @include contentWidth720;
+        @include mb80;
+
+        &Text {
+          @include commonText;
+          margin-bottom: 40px;
+        }
+
+        &Pic--01 {
+          margin-bottom: 60px;
+        }
+
+        &Pic--02 {
+          margin-bottom: 20px;
+        }
+
+        h4 {
+          width: fit-content;
+          margin-bottom: 20px;
+          border-bottom: 2px solid $orange;
+          font-size: 2rem;
+          font-weight: 500;
+
+          @include tab {
+            font-size: 1.6rem;
+          }
+        }
+
+        h5 {
+          font-size: 1.8rem;
+          margin-bottom: 10px;
+
+          @include tab {
+            font-size: 1.4rem;
+          }
+        }
+
+        // 数字色つきリスト
+        .commonList {
+          margin-bottom: 15px;
+
+          &Item {
+            margin-bottom: 15px;
+            @include tab {
+              font-size: 1.4rem;
+            }
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        // はじめて受診される方リンクの上のテキスト
+        .notes {
+          margin-bottom: 15px;
+          @include tab {
+            font-size: 1.4rem;
+          }
+        }
+
+        &Link {
+          margin-bottom: 15px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            color: $blue;
+            text-decoration: underline;
+            @include tab {
+              font-size: 1.4rem;
+            }
+          }
+        }
+
+        .commonLink {
+          margin-bottom: 20px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          a {
+            display: inline-block;
+            padding: 15px 50px;
+            border-radius: 100px;
+            background: $skyBlue;
+            position: relative;
+
+            @include tab {
+              padding: 15px 40px;
+            }
+
+            img {
+              width: 20px;
+            }
+          }
+        }
+
+        // 背景色有りリスト
+        .bgList {
+          background: $lightPurple;
+          padding: 30px 40px;
+
+          @include tab {
+            padding: 30px 20px;
+          }
+          &Item {
+            display: flex;
+            margin-bottom: 10px;
+            @include tab {
+              display: block;
+              font-size: 1.4rem;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            .strong {
+              display: block;
+              width: 100px;
+              font-weight: bold;
+            }
+          }
+        }
+
+        // ❶数字リスト
+        .numList {
+          margin-bottom: 40px;
+          &Item {
+            @include tab {
+              font-size: 1.4rem;
+            }
+          }
+        }
+
+        .tableWrap {
+          overflow-x: scroll;
+
+          table {
+            width: max(100%, 720px);
+            tr {
+              th,
+              td {
+                padding: 30px 20px;
+                font-size: 1.4rem;
+                font-weight: 400;
+                text-align: center;
+
+                @include tab {
+                  padding: 20px;
+                }
+              }
+              &:nth-child(2) .border--02:before {
+                content: "";
+                display: block;
+                width: calc(100% - 10px);
+                height: 1px;
+                background: #A5A5A5;
+                position: absolute;
+                top: 0;
+                left: 0;
+              }
+
+              .border--01 {
+                position: relative;
+
+                &:after {
+                  content: "";
+                  display: block;
+                  width: 1px;
+                  height: calc(100% - 10px);
+                  background: #A5A5A5;
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                }              }
+
+              .border--02 {
+                position: relative;
+
+                &:after {
+                  content: "";
+                  display: block;
+                  width: calc(100% - 10px);
+                  height: 1px;
+                  background: #A5A5A5;
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                }
+              }
+            }
+
+            .bg--01 {
+              border: 8px solid #fff;
+              background: rgba(222, 222, 222, .5);
+            }
+
+          }
+        }
+      }
+
+      // クレジットカードリスト
+      .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+
+        &Item {
+          width: 60px;
+        }
+      }
+    }
+  }
+}

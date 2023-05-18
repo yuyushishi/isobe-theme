@@ -1,0 +1,237 @@
+// ********************************
+// mixin
+// ********************************
+@use "variables"as *;
+
+// breakpoint media query
+@mixin pc-m {
+  @media screen and (max-width: ($pc-m)) {
+    @content;
+  }
+}
+
+@mixin pc-s {
+  @media screen and (max-width: ($pc-s)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media screen and (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin sp {
+  @media screen and (max-width: ($sp)) {
+    @content;
+  }
+}
+
+
+// section コンテンツ幅
+@mixin sectionWidth {
+  width: min(100% - 80px, $pc-s);
+  margin: 0 auto;
+
+  @include sp {
+    width: min(100% - 40px, $pc-s);
+  }
+}
+
+// content コンテンツ幅
+@mixin contentWidth720 {
+  width: min(100% - 80px, 720px);
+  margin: 0 auto;
+
+  @include tab {
+    width: min(100% - 40px, 720px);
+
+    @include sp {
+      width: min(100%, 720px);
+    }
+  }
+}
+
+// section padding top bottom120
+@mixin p120 {
+  padding: 120px 0;
+
+  @include tab {
+    padding: 100px 0;
+
+    @include sp {
+      padding: 80px 0;
+    }
+  }
+}
+
+// section padding top bottom80
+@mixin p80 {
+  padding: 80px 0;
+
+  @include tab {
+    padding: 60px 0;
+
+    @include sp {
+      padding: 40px 0;
+    }
+  }
+}
+
+// section margin bottom80
+@mixin mb80 {
+  margin-bottom: 80px;
+
+  @include tab {
+    margin-bottom: 60px;
+
+    @include sp {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// section margin bottom120
+@mixin mb120 {
+  margin-bottom: 120px;
+
+  @include tab {
+    margin-bottom: 100px;
+
+    @include sp {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+// top オレンジサブタイトル
+@mixin sectionTopTitle {
+  margin-bottom: 30px;
+  line-height: 1;
+
+  .en {
+    display: block;
+    margin-bottom: 10px;
+    color: $orange;
+    font-size: 1.4rem;
+    font-family: $f-roboto;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  .jp {
+    font-family: $f-serif;
+    font-size: 4rem;
+    font-weight: 500;
+
+    @include pc-m {
+      font-size: 3.4rem;
+
+      @include pc-s {
+        font-size: 2.8rem;
+
+        @include tab {
+          font-size: 2.2rem;
+        }
+      }
+    }
+  }
+}
+
+// 下層セクションタイトル
+@mixin sectionLowTitle {
+  font-size: 3.2rem;
+  font-family: $f-serif;
+  margin-bottom: 50px;
+  border-bottom: 2px solid $blue;
+  font-weight: 500;
+
+  @include pc-s {
+    font-size: 2.6rem;
+
+    @include tab {
+      font-size: 2.2rem;
+    }
+  }
+}
+
+// 下層コンテンツタイトル
+@mixin contentLowTitle {
+  border-bottom: 2px solid rgba($lightBlack, .2);
+  font-size: 2.8rem;
+  font-weight: 500;
+  font-family: $f-serif;
+  margin-bottom: 30px;
+  padding-left: 10px;
+  border-left: 3px solid $orange;
+
+  @include pc-s {
+    font-size: 2.2rem;
+
+    @include tab {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+
+
+// 共通ボタン skyBlue
+@mixin buttonSkyBlue {
+  text-align: center;
+
+  a {
+    display: inline-block;
+    padding: 15px 50px;
+    border-radius: 100px;
+    background: $skyBlue;
+    position: relative;
+
+    @include tab {
+      padding: 15px 40px;
+    }
+
+    svg {
+      width: 14px;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translate(0, -50%);
+
+      @include tab {
+        right: 15px;
+      }
+    }
+    img {
+      width: 20px;
+    }
+  }
+}
+
+// トップ フレックスボックス
+
+@mixin buttonBorder {
+  a {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid $lightBlue;
+
+    svg {
+      width: 12px;
+    }
+  }
+}
+
+
+// 診療科、診療案内テキスト
+@mixin commonText {
+  line-height: 1.8;
+  letter-spacing: 1px;
+  @include tab {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,569 @@
+@use "../global"as *;
+
+
+// 共通
+.commonCardList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+
+  @include pc-s {
+    gap: 30px;
+
+    @include sp {
+      gap: 30px 10px;
+    }
+  }
+
+  br {
+    display: none;
+
+    @include tab {
+      display: block;
+    }
+  }
+
+  .listItem {
+    width: calc((100% - (40px * 2)) / 3);
+
+    @include pc-s {
+      width: calc((100% - (30px * 2)) / 3);
+
+      @include tab {
+        width: calc((100% - (30px * 1)) / 2);
+
+        @include sp {
+          width: calc((100% - (10px * 1)) / 2);
+        }
+      }
+    }
+
+    .listItem__pic {
+      margin-bottom: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 3/2;
+      }
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      color: $blue;
+      font-size: 2rem;
+      text-align: center;
+
+      @include tab {
+        font-size: 1.4rem;
+      }
+    }
+
+    .listItem__text {
+      line-height: 1.7;
+
+      @include tab {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+// 共通
+.commonBannerList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @include sp {
+    gap: 20px;
+  }
+
+  .listItem {
+    width: calc((100% - (30px * 2)) / 3);
+
+    @include sp {
+      width: calc((100% - (20px * 1)) / 2);
+    }
+  }
+}
+
+
+
+
+// thought
+.aboutThought {
+  background: $lightBlue;
+  @include p80;
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+
+    .text {
+      width: min(100%, 640px);
+      margin: 0 auto 40px;
+      font-size: 2rem;
+      font-weight: 500;
+      font-family: $f-serif;
+
+      @include tab {
+        font-size: 1.6rem;
+      }
+    }
+
+    .logo {
+      width: min(100%, 320px);
+      margin: 0 auto 30px;
+    }
+
+    .bg {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 60px 0;
+      background: #fff;
+
+      @include tab {
+        padding: 40px 0;
+      }
+
+      .inner {
+        width: min(100% - 40px, 720px);
+        margin: 0 auto;
+
+        &Text {
+          margin-bottom: 20px;
+          line-height: 1.7;
+
+          @include tab {
+            font-size: 1.4rem;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+// policy
+.aboutPolicy {
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+
+    .list {
+      &Item {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 20px;
+
+        @include tab {
+          padding-left: 25px;
+          margin-bottom: 15px;
+          font-size: 1.4rem;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .num {
+          font-weight: bold;
+          color: $blue;
+          letter-spacing: 0;
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+
+        .jp {
+          line-height: 1.6;
+        }
+      }
+    }
+  }
+}
+
+// philosophy
+.aboutPhilosophy {
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+
+    .wrap {
+      margin-bottom: 60px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      // テキスト
+      .text {
+        line-height: 1.7;
+        letter-spacing: 1px;
+
+        @include tab {
+          font-size: 1.4rem;
+        }
+      }
+
+      // descリスト
+      .list {
+        &Item {
+          position: relative;
+          margin-bottom: 10px;
+
+          @include tab {
+            font-size: 1.4rem;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &:before {
+            content: "";
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: $blue;
+            position: absolute;
+            left: -12px;
+            top: 9px;
+
+            @include sp {
+              width: 3px;
+              height: 3px;
+              left: -8px;
+            }
+          }
+        }
+      }
+
+      .desc {
+        margin-bottom: 25px;
+      }
+
+      // deflist
+      .defList {
+        .inner {
+          display: flex;
+          margin-bottom: 20px;
+
+          @include tab {
+            display: block;
+            font-size: 1.4rem;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          dt {
+            width: 70px;
+            margin-top: 2px;
+            color: $blue;
+            font-weight: bold;
+          }
+
+          dd {
+            flex: 1;
+            line-height: 1.8;
+          }
+        }
+      }
+
+      // numList
+      .numList {
+        &Item {
+          position: relative;
+          padding-left: 30px;
+          margin-bottom: 20px;
+          line-height: 1.7;
+
+          @include tab {
+            font-size: 1.4rem;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .num {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: $blue;
+            font-weight: bold;
+          }
+
+          .jp {}
+        }
+      }
+    }
+  }
+}
+
+
+.aboutIntro {
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+    overflow: hidden;
+
+    .swiperIntro {
+      text-align: center;
+      position: relative;
+
+      @include tab {
+        padding-bottom: 50px;
+      }
+
+      .swiper-wrapper {
+        .swiper-slide {
+          .pic {
+            margin-bottom: 10px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              aspect-ratio: 3/2;
+            }
+          }
+
+          h3 {
+            margin-bottom: 8px;
+            font-size: 2rem;
+            color: $blue;
+
+            @include tab {
+              font-size: 1.6rem;
+            }
+          }
+
+          .text {
+            font-size: 1.4rem;
+
+            @include tab {
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+        background: #fff;
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        z-index: 11;
+
+        @include tab {
+          width: 40px;
+          height: 40px;
+          top: initial;
+          bottom: 3px;
+          transform: translateY(0);
+          border: 1px solid rgba(orange, .3);
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        svg {
+          width: 16px;
+          fill: $orange;
+        }
+      }
+
+      .swiper-button-prev {
+        left: 120px;
+
+        @include tab {
+          left: calc(50% - 80px);
+        }
+      }
+
+      .swiper-button-next {
+        right: 120px;
+
+        @include tab {
+          right: calc(50% - 80px);
+        }
+      }
+    }
+  }
+}
+
+// machine
+.aboutMachine {
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+  }
+}
+
+//intro
+.aboutIntro {
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+  }
+}
+
+// summary
+.aboutSummary {
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+
+    .wrap {
+      @include mb80;
+
+      // text list
+      .list {
+        @include contentWidth720;
+
+        &Item {
+          margin-bottom: 20px;
+          position: relative;
+          padding-left: 20px;
+
+          @include tab {
+            font-size: 1.4rem;
+            padding-left: 12px;
+          }
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          &Text {
+            &:after {
+              content: "";
+              display: block;
+              width: 6px;
+              height: 6px;
+              background: $blue;
+              border-radius: 50%;
+              position: absolute;
+              left: 0;
+              top: 8px;
+
+              @include tab {
+                width: 4px;
+                height: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// access
+.aboutAccess {
+  @include mb80;
+
+  .container {
+    @include sectionWidth;
+
+    // オレンジ共通タイトル
+    .commonTitle {
+      width: fit-content;
+      margin-bottom: 20px;
+      border-bottom: 2px solid $orange;
+      font-size: 2rem;
+      font-weight: bold;
+
+      @include tab {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+      }
+    }
+
+    iframe {
+      width: 100%;
+      margin-bottom: 60px;
+      aspect-ratio: 21/9;
+
+      @include tab {
+        margin-bottom: 40px;
+      }
+    }
+
+    .wrap {
+      display: flex;
+      gap: 80px;
+      margin-bottom: 60px;
+
+      @include tab {
+        margin-bottom: 40px;
+      }
+
+      @include pc-s {
+        gap: 40px;
+
+        @include tab {
+          display: block;
+        }
+      }
+
+      .commonBg {
+        width: 50%;
+        border: 2px solid $lightBlue;
+        padding: 40px 60px;
+
+        @include pc-s {
+          padding: 40px 20px;
+
+          @include tab {
+            width: 100%;
+          }
+        }
+      }
+
+      .list {
+        .inner {
+          margin-bottom: 30px;
+
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          dd {
+            @include tab {
+              font-size: 1.4rem;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+    }
+
+    .map {
+      @include contentWidth720;
+    }
+  }
+}
