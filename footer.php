@@ -98,7 +98,6 @@
         <figure class="pic">
           <a href="https://isobestaff2.hatenablog.com/" target="_blank" rel="noopenner">
             <img src="<?php echo get_template_directory_uri(); ?>/images/common/footer_img-04.png" alt="新北海道スタイル">
-          </a>
         </figure>
       </div>
 
@@ -106,11 +105,10 @@
   </div>
 </section>
 
-<!-- footer -->
 <footer id="footer" class="footer">
   <div class="container">
     <h3>完全予約制</h3>
-    <figure class="calendar"><img src="<?php echo get_template_directory_uri(); ?>/images/common/calendar_03.jpg" alt="カレンダー"></figure>
+    <figure class="calendar"><img src="<?php echo get_template_directory_uri(); ?>/images/common/calendar_03.png" alt="カレンダー"></figure>
     <p>
       ※1　循環器内科…毎月第１・３火曜日<br>
       ※2　認知症カフェ…2ヶ月毎　14:00〜15:00<br>
